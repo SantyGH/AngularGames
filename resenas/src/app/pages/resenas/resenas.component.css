@@ -1,0 +1,172 @@
+/* HERO */
+.hero-resenas {
+  background: url("https://wallpaperaccess.com/full/39653.jpg") no-repeat center/cover;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-resenas h1 {
+  font-size: 48px;
+  color: #ffd700;
+  text-shadow: 2px 2px 10px #000;
+}
+
+.hero-resenas p {
+  font-size: 20px;
+  color: #eee;
+  margin-top: 10px;
+}
+
+/* DESTACADAS */
+.destacadas {
+  padding: 60px 40px;
+  background: #1e1e2e;
+  text-align: center;
+}
+
+.destacadas h2 {
+  margin-bottom: 30px;
+  color: #ff6ec7;
+}
+
+.grid-resenas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.grid-resenas article {
+  background: #2c2c3a;
+  border-radius: 10px;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.grid-resenas article:hover {
+  transform: scale(1.05);
+}
+
+.grid-resenas img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.grid-resenas h3 {
+  margin: 10px 0;
+  color: #ffd700;
+}
+
+.grid-resenas p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.puntuacion {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 5px 10px;
+  background: #ffb347;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* CATEGORÍAS */
+.categorias {
+  padding: 50px;
+  background: url("https://images4.alphacoders.com/131/1311471.jpeg") no-repeat center/cover;
+  text-align: center;
+}
+
+.categorias h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.botones button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #ff6ec7;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.botones button:hover {
+  background: #ffd700;
+  color: #000;
+}
+
+/* ARTÍCULOS */
+.articulos {
+  padding: 60px 40px;
+  background: #111;
+}
+
+.articulos h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ff6ec7;
+}
+
+.articulo {
+  display: flex;
+  gap: 20px;
+  background: #2c2c3a;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.articulo img {
+  width: 200px;
+  border-radius: 8px;
+}
+
+.articulo h3 {
+  color: #ffd700;
+}
+
+.articulo p {
+  color: #ddd;
+  font-size: 15px;
+}
+
+/* COMUNIDAD */
+.comunidad {
+  padding: 60px;
+  background: url("https://images5.alphacoders.com/131/1311167.jpeg") no-repeat center/cover;
+  text-align: center;
+  color: #fff;
+}
+
+.comunidad h2 {
+  margin-bottom: 20px;
+  color: #ff6ec7;
+}
+
+.comunidad blockquote {
+  margin: 15px auto;
+  max-width: 600px;
+  background: rgba(0,0,0,0.6);
+  padding: 15px;
+  border-left: 4px solid #ffd700;
+  font-style: italic;
+}
+
+/* FOOTER */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #1e1e2e;
+  border-top: 2px solid #ffb347;
+  color: #ccc;
+}

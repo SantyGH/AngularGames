@@ -1,0 +1,143 @@
+/* Portada */
+.portada-juegos {
+  position: relative;
+  background: url("https://wallpaperaccess.com/full/39653.jpg") no-repeat center center/cover;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.portada-juegos .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 5, 5, 0.7);
+}
+
+.portada-juegos .contenido {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.portada-juegos h2 {
+  font-size: 2.5rem;
+  color: #ffd700;
+}
+
+.portada-juegos p {
+  font-size: 1.2rem;
+  color: #f8bbd0;
+}
+
+/* Juegos destacados */
+.juegos-destacados {
+  padding: 40px 20px;
+  background: #1c1c1c;
+  text-align: center;
+}
+
+.juegos-destacados h2 {
+  font-size: 2rem;
+  color: #ff69b4;
+  margin-bottom: 30px;
+}
+
+.grid-juegos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.juego {
+  background: #2b2b2b;
+  padding: 20px;
+  border-radius: 15px;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.juego img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.juego h3 {
+  color: #daa520;
+  margin-bottom: 10px;
+}
+
+.juego p {
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.juego button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #daa520, #ff69b4);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.juego:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.5);
+}
+
+/* Categorías */
+.categorias {
+  padding: 40px 20px;
+  background: #07012d;
+  text-align: center;
+}
+
+.categorias h2 {
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 30px;
+}
+
+.grid-categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.categoria {
+  padding: 40px 20px;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.categoria:hover {
+  transform: scale(1.05);
+}
+
+.categoria.accion { background: linear-gradient(135deg, #ff69b4, #8b0000); }
+.categoria.aventura { background: linear-gradient(135deg, #ffd700, #ff8c00); }
+.categoria.rpg { background: linear-gradient(135deg, #6a5acd, #ff69b4); }
+.categoria.deportes { background: linear-gradient(135deg, #00bfff, #daa520); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid-juegos {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+

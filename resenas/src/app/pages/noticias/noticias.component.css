@@ -1,0 +1,12 @@
+.noticias {
+  max-width: 800px;
+  margin: auto;
+}
+
+.noticia {
+  background: #fafafa;
+  padding: 15px;
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
