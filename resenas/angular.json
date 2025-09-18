@@ -11,10 +11,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/resenas",
-            "browser": "src/main.ts",
+            "baseHref": "/",
+            "index": "src/index.html",  
+            "main": "src/main.ts", 
             "polyfills": [
               "zone.js"
             ],
@@ -93,6 +95,6 @@
     }
   },
   "cli": {
-    "analytics": "6a344142-0182-42df-aa1d-b9b65c568ff6"
+    "analytics": "772da268-9346-4ecf-b2e4-5f230c1c9c28"
   }
 }
