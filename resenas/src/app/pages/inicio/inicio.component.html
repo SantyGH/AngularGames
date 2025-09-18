@@ -1,29 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zona Gamer - Reseñas de Videojuegos</title>
+  <link rel="stylesheet" href="inicio.component.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!-- SECCIÓN: Bienvenida -->
 <section class="bienvenida">
-  <div class="overlay"></div>
+  <div class="fondo-img-container">
+    <img src="https://res.cloudinary.com/doqenm8du/image/upload/v1758151322/ImagenesGame/bjfw9x2ty6rso7s9nt0b.jpg" alt="Fondo gamer" class="fondo-img" />
+    <div class="overlay"></div>
+  </div>
   <div class="contenido">
-    <h2>Bienvenido a una página de reseñas de videojuegos</h2>
-    <p>Descubre personajes icónicos, analiza juegos épicos y revive la nostalgia gamer.</p>
-    <button routerLink="/juegos">Explorar Juegos</button>
+    <h2>¡{{ nombre() }}!</h2>
+    <p>Reseñas, personajes, nostalgia y mucho más. ¡Sumérgete en el universo gamer!</p>
+    <button (click)="navegarAJuegos()">Explorar Juegos</button>
   </div>
 </section>
 
-<section class="destacados">
-  <h2>Secciones Destacadas</h2>
-  <div class="tarjetas">
-    <div class="tarjeta">
-      <h3>Juegos</h3>
-      <p>Explora reseñas completas de videojuegos de todas las generaciones.</p>
-      <button routerLink="/juegos">Ver más</button>
-    </div>
-    <div class="tarjeta">
-      <h3>Personajes</h3>
-      <p>Conoce a los héroes y villanos que marcaron la historia gamer.</p>
-      <button routerLink="/personajes">Ver más</button>
-    </div>
-    <div class="tarjeta">
-      <h3>Reseñas</h3>
-      <p>Opiniones imparciales para ayudarte a elegir tu próxima aventura.</p>
-      <button routerLink="/reseñas">Ver más</button>
-    </div>
-  </div>
+
+<section *ngIf="mostrarPromocion()" class="promocion">
+  🎉 ¡Promoción especial: 20% OFF en todos los juegos seleccionados! 🎉
 </section>
+
+
+  <!-- Juegos Destacados -->
+  <section class="juegos-destacados">
+    <h2>🔥 Juegos Destacados</h2>
+    <div class="grid-juegos">
+      <div class="juego">
+        <img src="https://res.cloudinary.com/doqenm8du/image/upload/v1758151328/ImagenesGame/c5tijflrrajyssdyuh8x.webp"
+          alt="Mario Odyssey">
+        <h3>Super Mario Odyssey</h3>
+        <p>Una aventura en 3D llena de mundos sorprendentes y creatividad.</p>
+        <button>Ver Reseña</button>
+      </div>
+      <div class="juego">
+        <img src="https://res.cloudinary.com/doqenm8du/image/upload/v1758151332/ImagenesGame/b5gxvclmkfneatkjhvth.jpg"
+          alt="Zelda Breath of the Wild">
+        <h3>Zelda: Breath of the Wild</h3>
+        <p>Explora Hyrule en un viaje épico de libertad y descubrimiento.</p>
+        <button>Ver Reseña</button>
+      </div>
+      <div class="juego">
+        <img src="https://res.cloudinary.com/doqenm8du/image/upload/v1758151322/ImagenesGame/pjkyekuyppyrzitcwuck.jpg"
+          alt="Halo Infinite">
+        <h3>Halo Infinite</h3>
+        <p>El Jefe Maestro regresa en una experiencia de acción sin límites.</p>
+        <button>Ver Reseña</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Últimos Lanzamientos -->
+  <section class="lanzamientos">
+    <h2>Últimos Lanzamientos</h2>
+    <div class="lanzamientos-grid">
+      <div class="juego">
+        <img src="https://i.imgur.com/SOMEIMAGE1.jpg" alt="Juego Nuevo">
+        <h4>Game One</h4>
+      </div>
+      <div class="juego">
+        <img src="https://i.imgur.com/SOMEIMAGE2.jpg" alt="Juego Nuevo">
+        <h4>Game Two</h4>
+      </div>
+      <div class="juego">
+        <img src="https://i.imgur.com/SOMEIMAGE3.jpg" alt="Juego Nuevo">
+        <h4>Game Three</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Juegos en Oferta -->
+  <section class="ofertas">
+    <h2>💸 Juegos en Oferta</h2>
+    <div class="grid-juegos">
+      <div class="juego">
+        <img src="assets/images/FifaGame.jpg" alt="Fifa 22">
+        <h3>Fifa 22</h3>
+        <p>¡La última edición de Fifa con grandes mejoras y novedades!</p>
+        <p><strong>30% OFF</strong></p>
+        <button>Comprar Ahora</button>
+      </div>
+      <div class="juego">
+        <img src="assets/images/CallOfDuty.jpg" alt="Call of Duty: Warzone">
+        <h3>Call of Duty: Warzone</h3>
+        <p>El battle royale de CoD con acción intensa y gráficos impresionantes.</p>
+        <p><strong>40% OFF</strong></p>
+        <button>Comprar Ahora</button>
+      </div>
+      <div class="juego">
+        <img src="assets/images/ResidentEvil.jpg" alt="Resident Evil Village">
+        <h3>Resident Evil Village</h3>
+        <p>Survival horror de última generación, lleno de suspenso y acción.</p>
+        <p><strong>25% OFF</strong></p>
+        <button>Comprar Ahora</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Juegos Populares -->
+  <section class="populares">
+    <h2>🌟 Juegos Populares</h2>
+    <div class="grid-juegos">
+      <div class="juego">
+        <img src="assets/images/AmongUs.jpg" alt="Among Us">
+        <h3>Among Us</h3>
+        <p>Juego multijugador de intriga y traición, ¡descubre quién es el impostor!</p>
+        <button>Ver Reseña</button>
+      </div>
+      <div class="juego">
+        <img src="assets/images/AnimalCrossing.jpg" alt="Animal Crossing: New Horizons">
+        <h3>Animal Crossing: New Horizons</h3>
+        <p>Construye tu isla, haz amigos y vive la vida de ensueño.</p>
+        <button>Ver Reseña</button>
+      </div>
+      <div class="juego">
+        <img src="assets/images/Fortnite.jpg" alt="Fortnite">
+        <h3>Fortnite</h3>
+        <p>El rey de los battle royale, ¡construye y vence a tus enemigos!</p>
+        <button>Ver Reseña</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Juegos por Género -->
+  <section class="generos">
+    <h2>🎮 Juegos por Género</h2>
+    <div class="generos-grid">
+      <div class="genero">
+        <h3>Acción</h3>
+        <img src="assets/images/ActionGame.jpg" alt="Juegos de Acción">
+        <button>Ver Juegos</button>
+      </div>
+      <div class="genero">
+        <h3>Aventura</h3>
+        <img src="assets/images/AdventureGame.jpg" alt="Juegos de Aventura">
+        <button>Ver Juegos</button>
+      </div>
+      <div class="genero">
+        <h3>RPG</h3>
+        <img src="assets/images/RPGGame.jpg" alt="Juegos RPG">
+        <button>Ver Juegos</button>
+      </div>
+      <div class="genero">
+        <h3>Deportes</h3>
+        <img src="assets/images/SportsGame.jpg" alt="Juegos de Deportes">
+        <button>Ver Juegos</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Próximos Lanzamientos -->
+  <section class="proximos-lanzamientos">
+    <h2>🚀 Próximos Lanzamientos</h2>
+    <div class="grid-juegos">
+      <div class="juego">
+        <img src="assets/images/UpcomingGame1.jpg" alt="Próximo Juego 1">
+        <h3>Juego X</h3>
+        <p>Un juego de acción futurista que te dejará sin aliento.</p>
+        <button>Ver Detalles</button>
+      </div>
+      <div class="juego">
+        <img src="assets/images/UpcomingGame2.jpg" alt="Próximo Juego 2">
+        <h3>Juego Y</h3>
+        <p>Explora un mundo vasto lleno de misterios y aventuras.</p>
+        <button>Ver Detalles</button>
+      </div>
+      <div class="juego">
+        <img src="assets/images/UpcomingGame3.jpg" alt="Próximo Juego 3">
+        <h3>Juego Z</h3>
+        <p>Prepárate para el combate en una galaxia lejana.</p>
+        <button>Ver Detalles</button>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

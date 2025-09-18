@@ -1,41 +1,530 @@
-.bienvenida {
-  background: url("https://wallpaperaccess.com/full/39653.jpg") no-repeat center center/cover;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+/* Fuente Gamer */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
   color: white;
+  height: 100vh;
+  overflow: hidden;
+   height: auto; /* o quita la propiedad */
+  overflow: auto; /* permite scroll */
 }
 
-.bienvenida .overlay {
-  background: rgba(0,0,0,0.5);
+.bienvenida {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  text-align: left;
+  position: relative;
+   height: auto; /* para que crezca según contenido */
+  min-height: 100vh; /* mínimo ocupa pantalla completa pero puede crecer */
+  overflow: visible; /* para que no oculte nada */
+}
+
+/* Contenedor imagen: ocupa 60% del ancho */
+.bienvenida .fondo-img-container {
+  position: relative;
+  flex: 0 0 60%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Imagen fondo */
+.bienvenida .fondo-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* Overlay oscuro */
+.bienvenida .fondo-img-container .overlay {
   position: absolute;
   inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  pointer-events: none;
 }
 
+/* Contenido ocupa el 40% restante */
 .bienvenida .contenido {
-  position: relative;
-  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  max-width: 100%;
+  box-sizing: border-box;
+  z-index: 2;
   text-align: center;
 }
 
+
+
+.promocion {
+  position: absolute;
+  top: 10%; /* ajusta este valor para moverla hacia arriba o abajo */
+  left: 50%;
+  transform: translateX(-50%);
+  background: gold;
+  padding: 20px 40px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+  z-index: 10; /* para que quede encima de todo */
+  white-space: nowrap;
+}
+
+
+
+
+/* TÍTULO */
+.bienvenida h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  color: #00ffff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px #000; /* SOMBRA DE TEXTO */
+}
+
+/* PÁRRAFO */
+.bienvenida p {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 5px #000; /* SOMBRA DE TEXTO */
+}
+
+/* BOTÓN */
+.bienvenida button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.bienvenida button:hover {
+  transform: scale(1.1);
+}
+
+
+/* --- SECCIÓN DESTACADOS --- */
 .destacados {
-  padding: 2rem;
   background: #1a1a1a;
+  padding: 3rem 2rem;
   text-align: center;
+}
+
+.destacados h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffcc00;
 }
 
 .tarjetas {
   display: flex;
-  justify-content: space-around;
-  margin-top: 1.5rem;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .tarjeta {
+  background: #292929;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 280px;
+  transition: transform 0.3s;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.tarjeta:hover {
+  transform: scale(1.05);
+}
+
+.tarjeta img {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+.tarjeta h3 {
+  color: #00ffff;
+}
+
+.tarjeta p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+}
+
+.tarjeta button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #ff69b4;
+  color: white;
+  cursor: pointer;
+}
+
+/* --- SECCIÓN LANZAMIENTOS --- */
+.lanzamientos {
+  background: #222;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.lanzamientos h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #7fff00;
+}
+
+.lanzamientos-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.juego {
   background: #333;
+  border-radius: 10px;
   padding: 1rem;
-  border-radius: 8px;
-  width: 30%;
-  color: gold;
+  width: 180px;
+}
+
+.juego img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.juego h4 {
+  font-size: 1rem;
+  color: #ffa500;
+}
+
+/* --- SECCIÓN SOBRE NOSOTROS --- */
+.sobre-nosotros {
+  padding: 3rem 2rem;
+  background: #181818;
+  text-align: center;
+}
+
+.sobre-nosotros h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff4500;
+}
+
+.sobre-nosotros p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* --- SECCIÓN JUEGOS DESTACADOS --- */
+.juegos-destacados {
+  padding: 40px 20px;
+  background: #1c1c1c;
+  text-align: center;
+}
+
+.juegos-destacados h2 {
+  font-size: 2rem;
+  color: #ff69b4;
+  margin-bottom: 30px;
+}
+
+.grid-juegos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.juego {
+  background: #2b2b2b;
+  padding: 20px;
+  border-radius: 15px;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.juego img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.juego h3 {
+  color: #daa520;
+  margin-bottom: 10px;
+}
+
+.juego p {
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.juego button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #daa520, #ff69b4);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.juego:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.5);
+}
+
+/* --- SECCIÓN JUEGOS EN OFERTA --- */
+.ofertas {
+  background: #333;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.ofertas h2 {
+  font-size: 2rem;
+  color: #ff00cc;
+  margin-bottom: 30px;
+}
+
+.grid-juegos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.juego {
+  background: #292929;
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.juego img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.juego h3 {
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.juego p {
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.juego p strong {
+  color: #ff69b4;
+}
+
+.juego button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.juego:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.5);
+}
+
+/* --- SECCIÓN JUEGOS POPULARES --- */
+.populares {
+  background: #1c1c1c;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.populares h2 {
+  font-size: 2rem;
+  color: #7fff00;
+  margin-bottom: 30px;
+}
+
+.grid-juegos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.juego {
+  background: #292929;
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.juego img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.juego h3 {
+  color: #ff4500;
+  margin-bottom: 10px;
+}
+
+.juego p {
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.juego button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #ff4500, #ff69b4);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.juego:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.5);
+}
+
+/* --- SECCIÓN JUEGOS POR GÉNERO --- */
+.generos {
+  background: #181818;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.generos h2 {
+  font-size: 2rem;
+  color: #00ffff;
+  margin-bottom: 30px;
+}
+
+.generos-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.genero {
+  background: #292929;
+  padding: 20px;
+  border-radius: 12px;
+  width: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.genero img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.genero h3 {
+  color: #ff69b4;
+  margin-bottom: 10px;
+}
+
+.genero button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #ff4500;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.genero:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.5);
+}
+
+/* --- SECCIÓN PRÓXIMOS LANZAMIENTOS --- */
+.proximos-lanzamientos {
+  background: #2b2b2b;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.proximos-lanzamientos h2 {
+  font-size: 2rem;
+  color: #7fff00;
+  margin-bottom: 30px;
+}
+
+.grid-juegos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.juego {
+  background: #292929;
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.juego img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.juego h3 {
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.juego p {
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.juego button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #ffcc00, #3333ff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.juego:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.5);
 }

@@ -47,18 +47,17 @@
   margin-bottom: 30px;
 }
 
+/* Sección de Juegos: Grilla General */
 .grid-juegos {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Múltiples columnas ajustables */
   gap: 20px;
-  justify-content: center;
 }
 
 .juego {
   background: #2b2b2b;
   padding: 20px;
   border-radius: 15px;
-  width: 280px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
@@ -132,12 +131,168 @@
 .categoria.rpg { background: linear-gradient(135deg, #6a5acd, #ff69b4); }
 .categoria.deportes { background: linear-gradient(135deg, #00bfff, #daa520); }
 
-/* Responsive */
+/* Juegos por sección */
+.juegos-seccion {
+  padding: 3rem 2rem;
+  background-color: #1a1a1a;
+  color: white;
+  text-align: center;
+}
+
+.juegos-seccion:nth-child(even) {
+  background-color: #202020;
+}
+
+.juegos-seccion h2 {
+  color: #ffd700;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Sección de Juegos - Responsivo */
 @media (max-width: 768px) {
   .grid-juegos {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Menos columnas en pantallas pequeñas */
+  }
+
+  .juego {
+    padding: 15px;
+    width: 100%; /* Asegurarse de que los juegos ocupen todo el ancho en pantallas pequeñas */
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Video Overlay */
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#game-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-info {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  max-width: 500px;
+  text-align: center;
+}
+
+.game-info h3 {
+  font-size: 2rem;
+}
+
+.game-info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  background: #ff69b4;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.close-btn:hover {
+  background: #ff1493;
+}
+
+/* Juegos destacados */
+.juegos-destacados {
+  padding: 40px 20px;
+  background: #1c1c1c;
+  text-align: center;
+}
+
+.grid-juegos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.juego {
+  background: #2b2b2b;
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+.juego img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.juego h3 {
+  color: #daa520;
+  margin-bottom: 10px;
+}
+
+.juego p {
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.juego button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #daa520, #ff69b4);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.juego:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.5);
+}
+
+
 
 

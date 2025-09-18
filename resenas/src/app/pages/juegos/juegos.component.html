@@ -1,4 +1,5 @@
 <main>
+
   <!-- Portada Juegos -->
   <section class="portada-juegos">
     <div class="overlay"></div>
@@ -12,22 +13,10 @@
   <section class="juegos-destacados">
     <h2>🔥 Juegos Destacados</h2>
     <div class="grid-juegos">
-      <div class="juego">
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Super_Mario_Odyssey.jpg" alt="Mario Odyssey">
-        <h3>Super Mario Odyssey</h3>
-        <p>Una aventura en 3D llena de mundos sorprendentes y creatividad.</p>
-        <button>Ver Reseña</button>
-      </div>
-      <div class="juego">
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/0e/The_Legend_of_Zelda_Breath_of_the_Wild.jpg" alt="Zelda BOTW">
-        <h3>Zelda: Breath of the Wild</h3>
-        <p>Explora Hyrule en un viaje épico de libertad y descubrimiento.</p>
-        <button>Ver Reseña</button>
-      </div>
-      <div class="juego">
-        <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Halo_Infinite.png" alt="Halo Infinite">
-        <h3>Halo Infinite</h3>
-        <p>El Jefe Maestro regresa en una experiencia de acción sin límites.</p>
+      <div class="juego" *ngFor="let juego of juegosDestacados">
+        <img [src]="juego.imagen" [alt]="juego.nombre">
+        <h3>{{ juego.nombre }}</h3>
+        <p>{{ juego.descripcion }}</p>
         <button>Ver Reseña</button>
       </div>
     </div>
@@ -51,8 +40,57 @@
       </div>
     </div>
   </section>
-</main>
 
-<footer>
-  <p>© 2025 ATYE LEGEND - Todos los derechos reservados 🎮</p>
-</footer>
+  <!-- 💥 Acción -->
+  <section class="juegos-seccion">
+    <h2>💥 Juegos de Acción</h2>
+    <div class="grid-juegos">
+      <div class="juego" *ngFor="let juego of juegosAccion">
+        <img [src]="juego.imagen" [alt]="juego.nombre">
+        <h3>{{ juego.nombre }}</h3>
+        <p>{{ juego.descripcion }}</p>
+        <button>Ver Reseña</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌍 Aventura -->
+  <section class="juegos-seccion">
+    <h2>🌍 Juegos de Aventura</h2>
+    <div class="grid-juegos">
+      <div class="juego" *ngFor="let juego of juegosAventura">
+        <img [src]="juego.imagen" [alt]="juego.nombre">
+        <h3>{{ juego.nombre }}</h3>
+        <p>{{ juego.descripcion }}</p>
+        <button>Ver Reseña</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🧙 RPG -->
+  <section class="juegos-seccion">
+    <h2>🧙 Juegos RPG</h2>
+    <div class="grid-juegos">
+      <div class="juego" *ngFor="let juego of juegosRPG">
+        <img [src]="juego.imagen" [alt]="juego.nombre">
+        <h3>{{ juego.nombre }}</h3>
+        <p>{{ juego.descripcion }}</p>
+        <button>Ver Reseña</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 😱 Terror -->
+  <section class="juegos-seccion">
+    <h2>😱 Juegos de Terror</h2>
+    <div class="grid-juegos">
+      <div class="juego" *ngFor="let juego of juegosTerror">
+        <img [src]="juego.imagen" [alt]="juego.nombre">
+        <h3>{{ juego.nombre }}</h3>
+        <p>{{ juego.descripcion }}</p>
+        <button>Ver Reseña</button>
+      </div>
+    </div>
+  </section>
+
+</main>

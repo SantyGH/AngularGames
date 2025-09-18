@@ -1,11 +1,41 @@
-<section class="noticias">
-  <h2>📰 Últimas Noticias</h2>
-  <div class="noticia">
-    <h3>Nintendo anuncia nuevo Mario</h3>
-    <p>Se espera el lanzamiento de un nuevo título para 2025.</p>
+<section class="personajes">
+  <div class="titulo-personajes">
+    <h2>🎮 Personajes Famosos</h2>
+    <p>Descubre los héroes, villanos y personajes más emblemáticos de tus franquicias favoritas. ¡Elige tu favorito y explora su historia!</p>
   </div>
-  <div class="noticia">
-    <h3>Xbox Game Pass crece</h3>
-    <p>La suscripción alcanza más de 30 millones de usuarios.</p>
+
+  <div class="categorias">
+    <div class="categoria">
+      <h3>🌟 Personajes</h3>
+      <div class="grid-personajes">
+       <div
+  class="personaje"
+  [class.expandido]="personajeSeleccionado === personaje.id"
+  *ngFor="let personaje of personajes"
+  (click)="seleccionarPersonaje(personaje.id)"
+  [ngStyle]="personajeSeleccionado === personaje.id 
+    ? {
+        'background-color': '#444',
+        'border': '3px solid #ffcc00',
+        'box-shadow': '0 0 15px #ffcc00'
+      } 
+    : {
+        'background-color': '#334',
+        'border': '1px solid transparent',
+        'box-shadow': '0 8px 15px rgba(255, 255, 255, 0.1)'
+      }"
+>
+  <img [src]="personaje.imagen" [alt]="personaje.nombre" />
+  <h4>{{ personaje.nombre }}</h4>
+
+  <div class="detalles" *ngIf="personajeSeleccionado === personaje.id">
+    <p><strong>Descripción:</strong> {{ personaje.descripcion }}</p>
+    <p><strong>Habilidades:</strong> {{ personaje.habilidades.join(', ') }}</p>
+    <p><strong>Historia:</strong> {{ personaje.historia }}</p>
+  </div>
+</div>
+
+      </div>
+    </div>
   </div>
 </section>
