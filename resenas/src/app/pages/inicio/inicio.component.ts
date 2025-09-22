@@ -6,6 +6,7 @@ import { Component, signal } from '@angular/core';
   styleUrls: ['./inicio.component.css'],
   standalone: true
 })
+
 export class InicioComponent {
   nombre = signal('Bienvenido a Zona Gamer');
   mostrarPromocion = signal(true);
