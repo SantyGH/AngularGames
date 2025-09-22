@@ -13,12 +13,14 @@
   <section class="juegos-destacados">
     <h2>🔥 Juegos Destacados</h2>
     <div class="grid-juegos">
-      <div class="juego" *ngFor="let juego of juegosDestacados">
-        <img [src]="juego.imagen" [alt]="juego.nombre">
-        <h3>{{ juego.nombre }}</h3>
-        <p>{{ juego.descripcion }}</p>
-        <button>Ver Reseña</button>
-      </div>
+      @for (juego of juegosDestacados; track juego) {
+        <div class="juego">
+          <img [src]="juego.imagen" [alt]="juego.nombre">
+          <h3>{{ juego.nombre }}</h3>
+          <p>{{ juego.descripcion }}</p>
+          <button>Ver Reseña</button>
+        </div>
+      }
     </div>
   </section>
 
@@ -45,12 +47,14 @@
   <section class="juegos-seccion">
     <h2>💥 Juegos de Acción</h2>
     <div class="grid-juegos">
-      <div class="juego" *ngFor="let juego of juegosAccion">
-        <img [src]="juego.imagen" [alt]="juego.nombre">
-        <h3>{{ juego.nombre }}</h3>
-        <p>{{ juego.descripcion }}</p>
-        <button>Ver Reseña</button>
-      </div>
+      @for (juego of juegosAccion; track juego) {
+        <div class="juego">
+          <img [src]="juego.imagen" [alt]="juego.nombre">
+          <h3>{{ juego.nombre }}</h3>
+          <p>{{ juego.descripcion }}</p>
+          <button>Ver Reseña</button>
+        </div>
+      }
     </div>
   </section>
 
@@ -58,12 +62,14 @@
   <section class="juegos-seccion">
     <h2>🌍 Juegos de Aventura</h2>
     <div class="grid-juegos">
-      <div class="juego" *ngFor="let juego of juegosAventura">
-        <img [src]="juego.imagen" [alt]="juego.nombre">
-        <h3>{{ juego.nombre }}</h3>
-        <p>{{ juego.descripcion }}</p>
-        <button>Ver Reseña</button>
-      </div>
+      @for (juego of juegosAventura; track juego) {
+        <div class="juego">
+          <img [src]="juego.imagen" [alt]="juego.nombre">
+          <h3>{{ juego.nombre }}</h3>
+          <p>{{ juego.descripcion }}</p>
+          <button>Ver Reseña</button>
+        </div>
+      }
     </div>
   </section>
 
@@ -71,12 +77,14 @@
   <section class="juegos-seccion">
     <h2>🧙 Juegos RPG</h2>
     <div class="grid-juegos">
-      <div class="juego" *ngFor="let juego of juegosRPG">
-        <img [src]="juego.imagen" [alt]="juego.nombre">
-        <h3>{{ juego.nombre }}</h3>
-        <p>{{ juego.descripcion }}</p>
-        <button>Ver Reseña</button>
-      </div>
+      @for (juego of juegosRPG; track juego) {
+        <div class="juego">
+          <img [src]="juego.imagen" [alt]="juego.nombre">
+          <h3>{{ juego.nombre }}</h3>
+          <p>{{ juego.descripcion }}</p>
+          <button>Ver Reseña</button>
+        </div>
+      }
     </div>
   </section>
 
@@ -84,12 +92,14 @@
   <section class="juegos-seccion">
     <h2>😱 Juegos de Terror</h2>
     <div class="grid-juegos">
-      <div class="juego" *ngFor="let juego of juegosTerror">
-        <img [src]="juego.imagen" [alt]="juego.nombre">
-        <h3>{{ juego.nombre }}</h3>
-        <p>{{ juego.descripcion }}</p>
-        <button>Ver Reseña</button>
-      </div>
+      @for (juego of juegosTerror; track juego) {
+        <div class="juego">
+          <img [src]="juego.imagen" [alt]="juego.nombre">
+          <h3>{{ juego.nombre }}</h3>
+          <p>{{ juego.descripcion }}</p>
+          <button>Ver Reseña</button>
+        </div>
+      }
     </div>
   </section>
 

@@ -10,24 +10,24 @@
 </head>
 
 <body>
-<!-- SECCIÓN: Bienvenida -->
-<section class="bienvenida">
-  <div class="fondo-img-container">
-    <img src="https://res.cloudinary.com/doqenm8du/image/upload/v1758151322/ImagenesGame/bjfw9x2ty6rso7s9nt0b.jpg" alt="Fondo gamer" class="fondo-img" />
-    <div class="overlay"></div>
-  </div>
-  <div class="contenido">
-    <h2>¡{{ nombre() }}!</h2>
-    <p>Reseñas, personajes, nostalgia y mucho más. ¡Sumérgete en el universo gamer!</p>
-    <button (click)="navegarAJuegos()">Explorar Juegos</button>
-  </div>
-</section>
+  <!-- SECCIÓN: Bienvenida -->
+  <section class="bienvenida">
+    <div class="fondo-img-container">
+      <img src="https://res.cloudinary.com/doqenm8du/image/upload/v1758151322/ImagenesGame/bjfw9x2ty6rso7s9nt0b.jpg" alt="Fondo gamer" class="fondo-img" />
+      <div class="overlay"></div>
+    </div>
+    <div class="contenido">
+      <h2>¡{{ nombre() }}!</h2>
+      <p>Reseñas, personajes, nostalgia y mucho más. ¡Sumérgete en el universo gamer!</p>
+      <button (click)="navegarAJuegos()">Explorar Juegos</button>
+    </div>
+  </section>
 
-
-<section *ngIf="mostrarPromocion()" class="promocion">
-  🎉 ¡Promoción especial: 20% OFF en todos los juegos seleccionados! 🎉
-</section>
-
+  @if (mostrarPromocion()) {
+    <section class="promocion">
+      🎉 ¡Promoción especial: 20% OFF en todos los juegos seleccionados! 🎉
+    </section>
+  }
 
   <!-- Juegos Destacados -->
   <section class="juegos-destacados">

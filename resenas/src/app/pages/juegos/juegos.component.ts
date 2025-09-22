@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // ✅ NECESARIO PARA *ngFor
 
 @Component({
   selector: 'app-juegos',
-  standalone: true, // Solo si estás usando standalone components
-  imports: [CommonModule], // ✅ AGREGA ESTO
+  standalone: true,
   templateUrl: './juegos.component.html',
   styleUrls: ['./juegos.component.css']
 })

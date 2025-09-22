@@ -1,12 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css'],
-  standalone: true,   // componente standalone para facilitar imports
-  imports: [NgIf],    // importar NgIf para usar *ngIf en la plantilla
+  standalone: true
 })
 export class InicioComponent {
   nombre = signal('Bienvenido a Zona Gamer');
